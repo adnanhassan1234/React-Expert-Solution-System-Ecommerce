@@ -35,7 +35,6 @@ const FilterContext = ({ children }) => {
     };
 
     // sorting function
-
     const sorting = (event) => {
         let userValue = event.target.value;
         dispatch({ type: "GET_SORT_VALUE", payload: userValue });

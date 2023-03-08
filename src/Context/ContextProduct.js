@@ -51,13 +51,13 @@ const ContextProduct = ({ children }) => {
 
     useEffect(() => {
         getProducts();
-        // getSingleProduct()
     }, [])
 
 
     if (!isLoader) {
         return <div className='loader'>
             <div className="spinner">
+             <h3>Loading...</h3>
             </div>
         </div>
     };

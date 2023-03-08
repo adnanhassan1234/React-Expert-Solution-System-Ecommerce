@@ -2,7 +2,7 @@ const CartReducer = (state, action) => {
   if (action.type === "ADD_TO_CART") {
     /* Destructuring the action.payload object. */
     let { id, color, amount, product } = action.payload;
-   //  console.log(" Add to cart single data product", product);
+    //  console.log(" Add to cart single data product", product);
 
     /* Checking if the product is already in the cart. */
     let exitingProduct = state.cart.find((currElem) => {
@@ -110,7 +110,6 @@ const CartReducer = (state, action) => {
         /* Incrementing the amount of the product. */
         let decAmount = currElem.amount - 1;
 
-        /* Checking if the amount is less than or equal to 1. If it is, it will set the amount to 1. */
         if (decAmount <= 1) {
           decAmount = 1;
         }
@@ -137,7 +136,6 @@ const CartReducer = (state, action) => {
       initialVal = initialVal + amount;
       return initialVal;
     }, 0);
-
 
     return {
       ...state,

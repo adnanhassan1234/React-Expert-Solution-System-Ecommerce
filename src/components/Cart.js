@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-// import styled from "styled-components";
 import { useNavigate, NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-// import FormatPrice from './Helper/FormatPrice';
-// import { useAuth0 } from "@auth0/auth0-react";
 import { useCartContext } from "../Context/Cart_context";
 import CartItem from "./CartItem";
 
@@ -11,7 +8,7 @@ const Cart = () => {
   // const navigate = useNavigate();
 
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
-  console.log("🚀 ~ file: Cart.js:16 ~ Cart ~ cart:", cart);
+  // console.log(" ~ Cart ~ cart:", cart);
 
   if (cart.length == 0) {
     return (
@@ -86,7 +83,7 @@ const Cart = () => {
                   <h6 className="my-2">
                     Order Total :
                     <span className="sub_total">
-                      <b> {shipping_fee + total_price} </b>
+                      <b> PKR: {shipping_fee + total_price} </b>
                     </span>
                   </h6>
                   <div
