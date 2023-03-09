@@ -22,7 +22,7 @@ const CartItem = ({ id, name, color, image, price, amount }) => {
                 color:
                 <button
                   style={{ backgroundColor: color, color: color }}
-                  className=" btn btn-info my-1 mx-1 active btnStyle"
+                  className=" btn btn-info my-1 mx-1 active "
                 >
                   {color}
                 </button>

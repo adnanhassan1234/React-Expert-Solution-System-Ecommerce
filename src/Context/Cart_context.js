@@ -8,7 +8,7 @@ const cartProvider = createContext();
  * If the local storage item 'cartItems' is an empty array, return an empty array, otherwise return
  */
 const getLocalCartData = () => {
-  let localCartData = localStorage.getItem("cartItems");
+  let localCartData = localStorage?.getItem("cartItems");
   if (localCartData === []) {
     return [];
   } else {
@@ -18,9 +18,8 @@ const getLocalCartData = () => {
 };
 
 const initialState = {
-  // cart: [],
-  /* Calling the function `getLOcalCartData()` and setting the return value to the `cart` property. */
-  cart: getLocalCartData(),
+  cart: [],
+  // cart: getLocalCartData(),
   total_item: "", // CART_TOTAL_AMOUNT
   total_price: "", // CART_TOTAL_PRICE_OVERALL
   shipping_fee: 500, // SHIPPING_TEXT_FEE
@@ -34,7 +33,7 @@ const Cart_context = ({ children }) => {
     dispatch({ type: "ADD_TO_CART", payload: { id, color, amount, product } });
   };
 
-  //  * When the removeItem function is called, it will dispatch an action to the reducer with the type of REMOVE_ITEM and the payload of the id of the item that was clicked.
+
   const removeItem = (id) => {
     dispatch({ type: "REMOVE_ITEM", payload: id });
   };
@@ -58,7 +57,7 @@ const Cart_context = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "CART_TOTAL_AMOUNT" });
     dispatch({ type: "CART_TOTAL_PRICE_OVERALL" });
-    localStorage.setItem("cartItems", JSON.stringify(state.cart));
+    // localStorage.setItem("cartItems", JSON.stringify(state.cart));
   }, [state.cart]);
 
   return (

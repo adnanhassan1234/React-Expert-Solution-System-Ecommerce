@@ -47,7 +47,7 @@ const Navbar = () => {
                 exact
                 activeClassName="active"
               >
-                PRODUCT
+                SERVICE
               </NavLink>
               <NavLink
                 exact

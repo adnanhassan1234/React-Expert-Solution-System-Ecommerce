@@ -22,7 +22,7 @@ const ContextProduct = ({ children }) => {
     //  My 1st API call by Feature_all_Product_Section
     const getProducts = async () => {
         try {
-            const res = await axios.get(`${process.env.REACT_APP_BASEURL}`);
+            const res = await axios.get('https://my-json-server.typicode.com/benirvingplt/products/products');
             const products = await res.data;
             dispatch({ type: "SET_API_DATA", payload: products });
             setIsLoader(true)

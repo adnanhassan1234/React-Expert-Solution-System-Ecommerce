@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 // import FormatPrice from '../Helper/FormatPrice';
 
 const Product = (currElm) => {
-  //   console.log("🚀 ~ file: Product.js:7 ~ Product ~ currElm:", currElm);
+  //   console.log("~ Product ~ currElm:", currElm);
   const { id, img, name, price } = currElm; // destructring
   return (
     <>

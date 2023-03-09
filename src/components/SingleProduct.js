@@ -10,13 +10,14 @@ import { RiSecurePaymentLine } from 'react-icons/ri';
 const SingleProduct = () => {
   const { id } = useParams();
   // console.log("~ SingleProduct ~ id:", id);
+  const URL ='https://my-json-server.typicode.com/benirvingplt/products/products';
 
   const { getSingleProduct, singleProduct, loading } = useProductContext();
 
   const { name, colour, price, img } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`${process.env.REACT_APP_BASEURL}?id=${id}`);
+    getSingleProduct(`${URL}?id=${id}`);
   }, []);
 
   if (loading) {
